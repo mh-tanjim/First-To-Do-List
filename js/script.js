@@ -34,10 +34,22 @@ headButton.addEventListener('click' , ()=>{
         removeButton.addEventListener('click', ()=>{
             singleTodo.remove('')
         })
-        // edit readonly collection ==================
-        editButton.addEventListener('click', ()=>{
-            singleTodoInput.removeAttribute('readonly' , 'readonly')
+        // edit button correction ====================
+        editButton.addEventListener("click" , ()=>{
+            if (editButton.innerHTML == "Edit"){
+                editButton.innerHTML      = "Save"
+                editButton.style = "background:green;color:white;"
+                singleTodoInput.removeAttribute('readonly' , 'readonly')
+            }
+            else{
+                editButton.innerHTML      = "Edit"
+                singleTodoInput.setAttribute("readonly" ,"readonly")
+                editButton.style = "background:royalblue;"
+
+            }
         })
 
     }
 })
+// Enter Button function *****************************
+
